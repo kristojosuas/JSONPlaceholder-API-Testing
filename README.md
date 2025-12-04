@@ -12,7 +12,7 @@ A comprehensive test automation framework for the JSONPlaceholder API using Play
 - Smoke Tests: Critical functionality verification
 - API Tests: Comprehensive endpoint testing
 - Performance Tests: Response time
-- Reporting: HTML report with screenshot
+- Reporting: HTML and Allure reports with screenshots
 
 ## 🏗️ Project Structure
 
@@ -113,6 +113,7 @@ TIMEOUT=30000
 
 1. Console Output: Real-time test execution feedback
 2. HTML Report: `playwright-reports/index.html`
+3. Allure Report: `allure-report/`
 
 ### 🔄 CI/CD Integration
 
