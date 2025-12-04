@@ -1,1 +1,0 @@
-Response time for GET /users: 1405.813700005412 ms

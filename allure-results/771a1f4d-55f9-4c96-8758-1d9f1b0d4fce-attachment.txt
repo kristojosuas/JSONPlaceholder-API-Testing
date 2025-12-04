@@ -1,1 +1,0 @@
-Response time for POST /posts: 1176.0434999987483 ms

@@ -1,1 +1,0 @@
-Response time for GET /posts: 1489.9138999953866 ms

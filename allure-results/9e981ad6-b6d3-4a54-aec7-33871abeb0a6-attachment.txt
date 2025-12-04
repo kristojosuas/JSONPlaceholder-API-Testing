@@ -1,1 +1,0 @@
-Response time for POST /users: 844.6388000026345 ms
