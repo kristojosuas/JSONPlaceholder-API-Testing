@@ -47,6 +47,5 @@ jobs:
         with:
           name: reports
           path: |
-            reports/
-            test-results/
+            reports/playwright-report/
           retention-days: 7
