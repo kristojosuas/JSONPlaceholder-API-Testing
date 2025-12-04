@@ -1,4 +1,4 @@
-name: CI
+name: JSONPlaceholder Test Workflow
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: Run tests and publish reports
+    name: Run and Report JSONPlaceholder Tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -41,17 +41,14 @@ jobs:
           TIMEOUT: 30000
           BASE_URL: ${{ secrets.BASE_URL || '' }}
 
-      - name: Generate Allure report
-        if: success()
-        run: npm run allure:report
-
       - name: Upload reports artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: reports
           path: |
-            reports
-            test-results
+            reports/*
+            test-results/*
           retention-days: 7
 
       - name: Upload Playwright report (html)
@@ -59,13 +56,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: reports/playwright-report
-          retention-days: 7
-
-      - name: Upload Allure HTML report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: reports/allure-report
+          path: reports/playwright-report/**
           retention-days: 7
