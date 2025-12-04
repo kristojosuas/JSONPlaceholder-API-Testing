@@ -51,8 +51,8 @@ JSONPlaceholder/
 1. Clone the repository
 
 ```bash
-git clone https://github.com/kristojosuas/SauceDemo-Website-Testing.git
-cd SauceDemo-Website-Testing
+git clone https://github.com/kristojosuas/JSONPlaceholder-API-Testing.git
+cd JSONPlaceholder-API-Testing
 ```
 
 2. Install dependencies

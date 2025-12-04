@@ -3,7 +3,7 @@ import { ApiClient } from '../../utils/api-client';
 import { Helpers } from '../../utils/helpers';
 import { Validators } from '../../utils/validators';
 import { TestData } from '../fixtures/test-data';
-import { Tags } from '../../utils/Tags';
+import { Tags } from '../../utils/tags';
 import userSchema from '../../schemas/user.schema.json' assert { type: 'json' };
 
 test.describe('JSONPlaceholder Users API', () => {
