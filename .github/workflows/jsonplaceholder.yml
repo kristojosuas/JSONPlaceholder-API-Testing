@@ -34,39 +34,19 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Install Allure commandline
-        run: |
-          npm install -g allure-commandline
-          # atau alternatif untuk Ubuntu
-          # sudo apt-add-repository ppa:qameta/allure
-          # sudo apt-get update
-          # sudo apt-get install allure
-
-      - name: Run Playwright tests with Allure
+      - name: Run Playwright tests
         run: npm test
         env:
           CI: true
           TIMEOUT: 30000
           BASE_URL: ${{ secrets.BASE_URL || '' }}
-          # Environment variable untuk enable Allure (jika diperlukan)
-          ALLURE_RESULTS_DIR: allure-results
-
-      - name: Generate Allure Report
-        if: always()
-        run: |
-          # Generate Allure report dari results
-          allure generate allure-results --clean -o reports/allure-report
-          
-          # Buat file history kosong jika belum ada (untuk trend graphs)
-          mkdir -p reports/allure-report/history || true
 
       - name: Upload test reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-reports
+          name: reports
           path: |
             reports/
-            allure-results/
             test-results/
           retention-days: 7

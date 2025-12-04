@@ -33,9 +33,10 @@ JSONPlaceholder/
 │   ├── helpers.ts                 # Helper functions
 │   ├── tags.ts                    # Test tagging utilities
 │   └── validators.ts              # Data validation utilities
-└── reports/
-    ├── playwright-report/         # HTML report from playwright
-    └── allure-report/             # Allure report
+├── reports/
+│    ├── playwright-report/         # HTML report from playwright (generated)
+│    └── allure-report/             # Allure report generated from allure-results
+└── allure-results/                 # Allure raw result (generated)
 ```
 
 ## 🚀 Getting Started
